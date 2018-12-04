@@ -13,11 +13,11 @@ namespace WebApplication1.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Price")]
+        [Display(Name = "Price", ResourceType = typeof(Resources.Resources))]
         public int Price { get; set; }
 
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
         public string Name { get; set; }
     }
 }

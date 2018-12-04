@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Helpers;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    [Authorize]
+    public class HomeController : BaseController
     {
         private InsuranceContext insuranceContext = new InsuranceContext();
 
@@ -40,6 +42,25 @@ namespace WebApplication1.Controllers
             insuranceContext.SaveChanges();
 
             return View("OrderComplete", order);
+        }
+
+        public ActionResult SetCulture(string culture)
+        {
+            System.Diagnostics.Debug.WriteLine("Culture: " + culture);
+            culture = CultureHelper.GetImplementedCulture(culture);
+
+            HttpCookie cookie = Request.Cookies["_culture"];
+            if (cookie != null)
+                cookie.Value = culture;
+            else
+            {
+                cookie = new HttpCookie("_culture");
+                cookie.Value = culture;
+                cookie.Expires = DateTime.Now.AddYears(1);
+            }
+            Response.Cookies.Add(cookie);
+
+            return RedirectToAction("Index");
         }
 
     }

@@ -24,6 +24,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("RU", "SetCulture", "Home", new { culture = "ru" }, null)</li>
+                    <li>@Html.ActionLink("EN", "SetCulture", "Home", new { culture = "en-US" }, null)</li>
+                </ul>
             </div>
         </div>
     </div>

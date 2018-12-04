@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Resources;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Validators;
 
 namespace WebApplication1.Models
 {
@@ -22,8 +24,9 @@ namespace WebApplication1.Models
         public Insurance Insurance { get; set; }
 
         [Required]
-        [Display(Name = "Customer")]
-        [DataType(DataType.Text)]
+        [Display(Name = "CustomerEmail", ResourceType = typeof(Resources.Resources))]
+        [MyCustomValidator("lmfao")]
+        [DataType(DataType.EmailAddress)]
         public string Customer { get; set; }
     }
 }

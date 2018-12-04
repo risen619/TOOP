@@ -13,7 +13,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>Actions</th>
+            <th>@Resources.Resources.Actions</th>
         </tr>
     
         @foreach (var item in Model)
@@ -26,9 +26,7 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
-                    @Html.ActionLink("Details", "Details", new { item.Id })
-                    @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+                    @Html.ActionLink(Resources.Resources.Details, "Details", new { item.Id })
                 </td>
             </tr>
         }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Resources;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1.Validators;
+using TOOP.Validators;
 
-namespace WebApplication1.Models
+namespace TOOP.Models
 {
     public class Order
     {

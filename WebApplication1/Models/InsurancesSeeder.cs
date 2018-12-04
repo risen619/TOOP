@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication1.Models
+namespace TOOP.Models
 {
     public class InsurancesSeeder : DropCreateDatabaseAlways<InsuranceContext>
     {

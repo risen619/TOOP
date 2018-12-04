@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1.Helpers;
-using WebApplication1.Models;
+using TOOP.Helpers;
+using TOOP.Models;
 
-namespace WebApplication1.Controllers
+namespace TOOP.Controllers
 {
     [Authorize]
     public class HomeController : BaseController

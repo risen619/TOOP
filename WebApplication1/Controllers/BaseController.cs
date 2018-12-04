@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1.Helpers;
+using TOOP.Helpers;
 
-namespace WebApplication1.Controllers
+namespace TOOP.Controllers
 {
     public class BaseController : Controller
     {

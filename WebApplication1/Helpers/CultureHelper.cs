@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 
-namespace WebApplication1.Helpers
+namespace TOOP.Helpers
 {
     public static class CultureHelper
     {

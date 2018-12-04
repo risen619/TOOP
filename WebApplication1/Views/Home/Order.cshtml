@@ -1,0 +1,34 @@
+﻿@model WebApplication1.Models.OrderViewModel
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Order is complete";
+}
+
+<h2>Order is complete</h2>
+<hr />
+<p>
+    You ordered @Model.Insurance.Name one for @Model.Insurance.Price
+</p>
+<div class="row">
+    <div class="col-md-8">
+        @using (Html.BeginForm("Order", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Customer, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Customer, new { @class = "form-control", Value = Request.IsAuthenticated ? User.Identity.GetUserName() : "" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Order" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

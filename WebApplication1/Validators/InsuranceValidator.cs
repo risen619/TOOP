@@ -17,7 +17,7 @@ namespace TOOP.Validators
             Insurance i = (Insurance)Metadata.Model;
 
             List<ModelValidationResult> errors = new List<ModelValidationResult>();
-            if (i.Name == "undefined" && i.Price <= 0)
+            if (i == null || (i != null && i.Name == "undefined" && i.Price <= 0))
             {
                 errors.Add(new ModelValidationResult
                 {

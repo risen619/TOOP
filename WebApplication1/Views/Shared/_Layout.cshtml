@@ -20,9 +20,6 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                </ul>
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("RU", "SetCulture", "Home", new { culture = "ru" }, null)</li>
